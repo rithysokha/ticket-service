@@ -3,6 +3,7 @@ package com.ticket.ticketservice.controller;
 import com.ticket.ticketservice.dto.ApiResponse;
 import com.ticket.ticketservice.model.Ticket;
 import com.ticket.ticketservice.service.TicketService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +29,7 @@ public class TicketController {
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<Ticket>> createTicket(@RequestBody Ticket ticket){
+    public ResponseEntity<ApiResponse<Ticket>> createTicket(@Valid @RequestBody Ticket ticket){
         ApiResponse<Ticket> response = ticketService.createTicket(ticket);
         return new ResponseEntity<>(response, response.status());
     }
