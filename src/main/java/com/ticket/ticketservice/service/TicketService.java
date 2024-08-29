@@ -80,4 +80,9 @@ public ApiResponse<Ticket> editTicket(Long id, Ticket ticketBody) {
         return new ApiResponse<>("Ticket updating failed", null, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
+
+    public ApiResponse<List<Ticket>> getMultipleTicketByIds(List<Long> ids) {
+        List<Ticket> ticketList = ticketRepository.findAllById(ids);
+        return new ApiResponse<>("All ticket with the following id", ticketList, HttpStatus.OK);
+    }
 }

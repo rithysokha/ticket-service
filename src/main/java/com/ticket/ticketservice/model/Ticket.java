@@ -26,12 +26,12 @@ public class Ticket {
     @Column(name = "description", nullable = false)
     private String description;
     @NotBlank
-    @Column(name = "imageUrl", nullable = false)
+    @Column(name = "image_url", nullable = false)
     private String imageUrl;
     @NotNull
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
     @NotNull
-    @Column(name = "eventDateTime", nullable = false)
+    @Column(name = "event_date_time", nullable = false)
     private LocalDateTime eventDateTime;
 }

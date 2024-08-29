@@ -1,4 +1,4 @@
-package com.ticket.reserveservice.config;
+package com.ticket.ticketservice.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

@@ -28,6 +28,12 @@ public class TicketController {
         return new ResponseEntity<>(response, response.status());
     }
 
+    @GetMapping("/multiple")
+    public ResponseEntity<ApiResponse<List<Ticket>>> getMultipleTicketByIds(@RequestParam List<Long> ids){
+        ApiResponse<List<Ticket>> response = ticketService.getMultipleTicketByIds(ids);
+        return new ResponseEntity<>(response, response.status());
+    }
+
     @PostMapping
     public ResponseEntity<ApiResponse<Ticket>> createTicket(@Valid @RequestBody Ticket ticket){
         ApiResponse<Ticket> response = ticketService.createTicket(ticket);
